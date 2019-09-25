@@ -44,10 +44,10 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
     protected String artifactId;
     protected String artifactVersion = "1.0.0";
     protected String groupId = "org.openapitools";
-    protected String packageName = "org.openapitools";
+    protected String packageName = "ch.postfinance.network";
     protected String apiSuffix = "Api";
 
-    protected String sourceFolder = "src/main/kotlin";
+    protected String sourceFolder = "src/main/java";
     protected String testFolder = "src/test/kotlin";
 
     protected String apiDocPath = "docs/";
@@ -55,7 +55,7 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
     protected boolean parcelizeModels = false;
 
     protected CodegenConstants.ENUM_PROPERTY_NAMING_TYPE enumPropertyNaming = CodegenConstants.ENUM_PROPERTY_NAMING_TYPE.camelCase;
-    protected SERIALIZATION_LIBRARY_TYPE serializationLibrary = SERIALIZATION_LIBRARY_TYPE.moshi;
+    protected SERIALIZATION_LIBRARY_TYPE serializationLibrary = SERIALIZATION_LIBRARY_TYPE.gson;
 
     public AbstractKotlinCodegen() {
         super();
@@ -427,9 +427,9 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
 
         additionalProperties.put(CodegenConstants.API_PACKAGE, apiPackage());
         additionalProperties.put(CodegenConstants.MODEL_PACKAGE, modelPackage());
-
-        additionalProperties.put("apiDocPath", apiDocPath);
-        additionalProperties.put("modelDocPath", modelDocPath);
+//
+//        additionalProperties.put("apiDocPath", apiDocPath);
+//        additionalProperties.put("modelDocPath", modelDocPath);
     }
 
     public void setArtifactId(String artifactId) {

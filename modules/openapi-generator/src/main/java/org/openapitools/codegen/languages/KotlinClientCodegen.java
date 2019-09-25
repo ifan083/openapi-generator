@@ -85,7 +85,7 @@ public class KotlinClientCodegen extends AbstractKotlinCodegen {
         super();
 
         artifactId = "kotlin-client";
-        packageName = "org.openapitools.client";
+        packageName = "ch.postfinance.network";
 
         // cliOptions default redefinition need to be updated
         updateOption(CodegenConstants.ARTIFACT_ID, this.artifactId);
