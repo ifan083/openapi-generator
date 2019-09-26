@@ -427,7 +427,7 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
 
         additionalProperties.put(CodegenConstants.API_PACKAGE, apiPackage());
         additionalProperties.put(CodegenConstants.MODEL_PACKAGE, modelPackage());
-//
+//      removed api+model paths on purpose
 //        additionalProperties.put("apiDocPath", apiDocPath);
 //        additionalProperties.put("modelDocPath", modelDocPath);
     }
