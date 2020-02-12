@@ -880,7 +880,7 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
             }
         } else if (ModelUtils.isStringSchema(p)) {
             if (p.getDefault() != null) {
-                return "'" + p.getDefault() + "'";
+                return "\"" + p.getDefault() + "\"";
             }
         }
 

@@ -17,7 +17,7 @@ interface {{classname}} {
     {{/allParams}}* @return {{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}void{{/returnType}}
   */
   {{#isDeprecated}}
-  @Deprecated
+  @Deprecated("")
   {{/isDeprecated}}
   {{#formParams}}
   {{#-first}}
