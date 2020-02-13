@@ -241,6 +241,11 @@ public abstract class AbstractKotlinCodegen extends DefaultCodegen implements Co
     @Override
     public String escapeReservedWord(String name) {
         // TODO: Allow enum escaping as an option (e.g. backticks vs append/prepend underscore vs match model property escaping).
+
+        //NOTE: data as reserved word has issues with being escaped as backtick
+        if (name.equals("data")) {
+            return name;
+        }
         return String.format(Locale.ROOT, "`%s`", name);
     }
 

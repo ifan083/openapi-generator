@@ -164,27 +164,27 @@ public class KotlinClientCodegen extends AbstractKotlinCodegen {
         }
 
         // common (jvm/multiplatform) supporting files
-        supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
-        supportingFiles.add(new SupportingFile("build.gradle.mustache", "", "build.gradle"));
-        supportingFiles.add(new SupportingFile("settings.gradle.mustache", "", "settings.gradle"));
-        supportingFiles.add(new SupportingFile("infrastructure/ApiClient.kt.mustache", infrastructureFolder, "ApiClient.kt"));
-        supportingFiles.add(new SupportingFile("infrastructure/ApiAbstractions.kt.mustache", infrastructureFolder, "ApiAbstractions.kt"));
-        supportingFiles.add(new SupportingFile("infrastructure/RequestConfig.kt.mustache", infrastructureFolder, "RequestConfig.kt"));
-        supportingFiles.add(new SupportingFile("infrastructure/RequestMethod.kt.mustache", infrastructureFolder, "RequestMethod.kt"));
+//        supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
+//        supportingFiles.add(new SupportingFile("build.gradle.mustache", "", "build.gradle"));
+//        supportingFiles.add(new SupportingFile("settings.gradle.mustache", "", "settings.gradle"));
+//        supportingFiles.add(new SupportingFile("infrastructure/ApiClient.kt.mustache", infrastructureFolder, "ApiClient.kt"));
+//        supportingFiles.add(new SupportingFile("infrastructure/ApiAbstractions.kt.mustache", infrastructureFolder, "ApiAbstractions.kt"));
+//        supportingFiles.add(new SupportingFile("infrastructure/RequestConfig.kt.mustache", infrastructureFolder, "RequestConfig.kt"));
+//        supportingFiles.add(new SupportingFile("infrastructure/RequestMethod.kt.mustache", infrastructureFolder, "RequestMethod.kt"));
 
         if (JVM.equals(getLibrary())) {
             additionalProperties.put(JVM, true);
 
             // jvm specific supporting files
-            supportingFiles.add(new SupportingFile("infrastructure/ApplicationDelegates.kt.mustache", infrastructureFolder, "ApplicationDelegates.kt"));
-            supportingFiles.add(new SupportingFile("infrastructure/Errors.kt.mustache", infrastructureFolder, "Errors.kt"));
-            supportingFiles.add(new SupportingFile("infrastructure/ResponseExtensions.kt.mustache", infrastructureFolder, "ResponseExtensions.kt"));
-            supportingFiles.add(new SupportingFile("infrastructure/Serializer.kt.mustache", infrastructureFolder, "Serializer.kt"));
-            supportingFiles.add(new SupportingFile("infrastructure/ApiInfrastructureResponse.kt.mustache", infrastructureFolder, "ApiInfrastructureResponse.kt"));
-            supportingFiles.add(new SupportingFile("infrastructure/ByteArrayAdapter.kt.mustache", infrastructureFolder, "ByteArrayAdapter.kt"));
-            supportingFiles.add(new SupportingFile("infrastructure/LocalDateAdapter.kt.mustache", infrastructureFolder, "LocalDateAdapter.kt"));
-            supportingFiles.add(new SupportingFile("infrastructure/LocalDateTimeAdapter.kt.mustache", infrastructureFolder, "LocalDateTimeAdapter.kt"));
-            supportingFiles.add(new SupportingFile("infrastructure/UUIDAdapter.kt.mustache", infrastructureFolder, "UUIDAdapter.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/ApplicationDelegates.kt.mustache", infrastructureFolder, "ApplicationDelegates.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/Errors.kt.mustache", infrastructureFolder, "Errors.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/ResponseExtensions.kt.mustache", infrastructureFolder, "ResponseExtensions.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/Serializer.kt.mustache", infrastructureFolder, "Serializer.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/ApiInfrastructureResponse.kt.mustache", infrastructureFolder, "ApiInfrastructureResponse.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/ByteArrayAdapter.kt.mustache", infrastructureFolder, "ByteArrayAdapter.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/LocalDateAdapter.kt.mustache", infrastructureFolder, "LocalDateAdapter.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/LocalDateTimeAdapter.kt.mustache", infrastructureFolder, "LocalDateTimeAdapter.kt"));
+//            supportingFiles.add(new SupportingFile("infrastructure/UUIDAdapter.kt.mustache", infrastructureFolder, "UUIDAdapter.kt"));
 
         } else if (MULTIPLATFORM.equals(getLibrary())) {
             additionalProperties.put(MULTIPLATFORM, true);
@@ -208,20 +208,20 @@ public class KotlinClientCodegen extends AbstractKotlinCodegen {
             importMapping.put("LocalDate", "kotlin.String");
             importMapping.put("LocalTime", "kotlin.String");
 
-            // multiplatform specific supporting files
-            supportingFiles.add(new SupportingFile("infrastructure/HttpResponse.kt.mustache", infrastructureFolder, "HttpResponse.kt"));
-
-            // multiplatform specific testing files
-            final String testFolder = (sourceFolder + File.separator + packageName + File.separator + "infrastructure").replace(".", "/");
-            supportingFiles.add(new SupportingFile("commonTest/coroutine.mustache", "src/commonTest/kotlin/util", "Coroutine.kt"));
-            supportingFiles.add(new SupportingFile("iosTest/coroutine.mustache", "src/iosTest/kotlin/util", "Coroutine.kt"));
-            supportingFiles.add(new SupportingFile("jvmTest/coroutine.mustache", "src/jvmTest/kotlin/util", "Coroutine.kt"));
-
-            // gradle wrapper supporting files
-            supportingFiles.add(new SupportingFile("gradlew.mustache", "", "gradlew"));
-            supportingFiles.add(new SupportingFile("gradlew.bat.mustache", "", "gradlew.bat"));
-            supportingFiles.add(new SupportingFile("gradle-wrapper.properties.mustache", "gradle.wrapper".replace(".", File.separator), "gradle-wrapper.properties"));
-            supportingFiles.add(new SupportingFile("gradle-wrapper.jar", "gradle.wrapper".replace(".", File.separator), "gradle-wrapper.jar"));
+//            // multiplatform specific supporting files
+//            supportingFiles.add(new SupportingFile("infrastructure/HttpResponse.kt.mustache", infrastructureFolder, "HttpResponse.kt"));
+//
+//            // multiplatform specific testing files
+//            final String testFolder = (sourceFolder + File.separator + packageName + File.separator + "infrastructure").replace(".", "/");
+//            supportingFiles.add(new SupportingFile("commonTest/coroutine.mustache", "src/commonTest/kotlin/util", "Coroutine.kt"));
+//            supportingFiles.add(new SupportingFile("iosTest/coroutine.mustache", "src/iosTest/kotlin/util", "Coroutine.kt"));
+//            supportingFiles.add(new SupportingFile("jvmTest/coroutine.mustache", "src/jvmTest/kotlin/util", "Coroutine.kt"));
+//
+//            // gradle wrapper supporting files
+//            supportingFiles.add(new SupportingFile("gradlew.mustache", "", "gradlew"));
+//            supportingFiles.add(new SupportingFile("gradlew.bat.mustache", "", "gradlew.bat"));
+//            supportingFiles.add(new SupportingFile("gradle-wrapper.properties.mustache", "gradle.wrapper".replace(".", File.separator), "gradle-wrapper.properties"));
+//            supportingFiles.add(new SupportingFile("gradle-wrapper.jar", "gradle.wrapper".replace(".", File.separator), "gradle-wrapper.jar"));
         }
 
         // date library processing
